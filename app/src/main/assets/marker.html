@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>点标记</title>
+    <style>
+        body,#mapContainer{
+            margin:0;
+            height:100%;
+            width:100%;
+            font-size:12px;
+        }
+    </style>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main.css?v=1.0?v=1.0" />
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.1&key=93c39ffbb14c2e89a5e5d12cb3566196&plugin=AMap.ToolBar"></script>
+    <script>
+        function init() {
+            map = new AMap.Map("mapContainer", {
+                zoom: 18,
+                center:[121.5942460251,31.2131540761]
+            });
+            marker = new AMap.Marker({
+                map:map,
+                position:[121.5942460251,31.2131540761]
+            })
+            marker.setLabel({
+                offset: new AMap.Pixel(20, 20),//修改label相对于maker的位置
+                content: "点击Marker打开高德地图"
+            });
+            marker.on('click',function(e){
+                marker.markOnAMAP({
+                    name:'首开广场',
+                    position:marker.getPosition()
+                })
+            })
+            map.addControl(new AMap.ToolBar());
+            if(AMap.UA.mobile){
+                document.getElementById('button_group').style.display='none';
+            }
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="mapContainer" ></div>
+<div class="button-group" id='button_group' style='top:15px;bottom:inherit'>
+    <img src="http://a.amap.com/lbs/static/img/js-markonapp.png" style='width:120px;height:120px'>
+    <div class='button' style='text-align: center'>手机扫码打开demo</div>
+</div>
+</body>
+</html>

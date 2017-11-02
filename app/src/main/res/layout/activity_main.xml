@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    tools:context="com.ppdai.mapdemo.MainActivity">
+
+    <Button
+        android:id="@+id/google_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google 路径规划"/>
+
+    <Button
+        android:id="@+id/amap_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="AMap 路径规划"/>
+
+    <Button
+        android:id="@+id/amapJs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="AMap JS路径规划"/>
+
+    <Button
+        android:id="@+id/amapWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="AMap Web路径规划"/>
+
+    <Button
+        android:id="@+id/amapMarker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="AMap Marker"/>
+
+</LinearLayout>
